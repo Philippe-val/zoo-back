@@ -8,7 +8,7 @@ import initPrestationRoutes from "./prestation.routes.js";
 
 const initRoutes = (app) => {
     initHabitatRoutes(app);
-    initAnimalRoutes(app);
+    initAnimauxRoutes(app);
     intMissionsRoutes(app);
     initPrestationRoutes(app);
     };

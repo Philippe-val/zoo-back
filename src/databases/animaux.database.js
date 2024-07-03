@@ -1,7 +1,7 @@
 import query from "./init.database.js";
 
-const readAnimal = async () => {
-    const sql = "SELECT * FROM animal";
+const readAnimaux = async () => {
+    const sql = "SELECT * FROM animaux";
     let error = null
     let result = null
     try {
@@ -14,12 +14,12 @@ const readAnimal = async () => {
     
 };
 
-const readOneHabitat = async (animalId) => {
+const readOneAnimaux = async (animauxId) => {
     const sql = "SELECT * FROM habitat WHERE id = ?";
     let error = null
     let result = null
     try {
-        result = await query(sql, [animalId]);
+        result = await query(sql, [animauxId]);
     } catch (e) {
         error = e
     } finally {
@@ -27,7 +27,7 @@ const readOneHabitat = async (animalId) => {
     }
 };
 
-export const AnimalDB = {
-    readAnimal,
-    readOneAnimal
+export const AnimauxDB = {
+    readAnimaux,
+    readOneAnimaux
 };
