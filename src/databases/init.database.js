@@ -1,11 +1,13 @@
 import mysql from "mysql2";
+import dotenv from "dotenv";
+dotenv.config();
 
 // Création d'un gestionnaire (ou pool) de connexions à la base de données MySQL
 const pool = mysql.createPool({
   connectionLimit: 10000,
   host: process.env.DB_HOST || "localhost",
   user: process.env.DB_USER || "root",
-  password: process.env.DB_PASS || "" ,
+  password: process.env.DB_PASS || "",
   database: process.env.DB_NAME || "zoo",
 });
 
