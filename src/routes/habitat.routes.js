@@ -4,7 +4,7 @@ import {HabitatController} from '../controllers/habitat.controller.js';
 const initHabitatRoutes = (app) => {
     const router = express.Router();
     router.get('/habitats', HabitatController.readHabitat);
-    router.get('/habitats/:habitatId', HabitatController.readOneHabitat);
+    router.get('/habitat/:habitatId', HabitatController.readOneHabitat);
     app.use('/api', router);
 };
 

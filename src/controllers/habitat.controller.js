@@ -12,7 +12,7 @@ const readOneHabitat = async (req, res) => {
     const habitatId = req.params.habitatId;
     try {
         const habitat = await HabitatDB.readOneHabitat(habitatId);
-        res.status(200).json({habitat:result[0]});
+        res.status(200).json({habitat:habitat.result[0]});
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

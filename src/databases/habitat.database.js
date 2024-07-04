@@ -15,7 +15,7 @@ const readHabitats = async () => {
 };
 
 const readOneHabitat = async (habitatId) => {
-    const sql = "SELECT * FROM habitat WHERE id = ?";
+    const sql = "SELECT * FROM habitat WHERE id_habitat = ?";
     let error = null
     let result = null
     try {

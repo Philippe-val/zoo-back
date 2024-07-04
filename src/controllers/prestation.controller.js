@@ -2,7 +2,7 @@ import { PrestationDB } from '../databases/prestation.database.js';
 
 const readPrestation = async (req, res) => {
     try {
-        const Prestation = await PrestationlDB.readPrestation();
+        const prestation = await PrestationDB.readPrestation();
         res.status(200).json({Prestation:prestation.result});
     } catch (error) {
         res.status(500).json({ message: error.message });
