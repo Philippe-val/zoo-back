@@ -1,9 +1,10 @@
 import { AnimalDB } from '../databases/animal.database.js';
 
 const readAnimal = async (req, res) => {
+    const habitatId = req.query.habitatId;
     try {
-        const animal = await AnimalDB.readAnimal();
-        res.status(200).json({animal:animal.result});
+        const animaux = await AnimalDB.readAnimalByHabitat(habitatId);
+        res.status(200).json({animaux:animaux});
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -11,8 +12,8 @@ const readAnimal = async (req, res) => {
 const readOneAnimal = async (req, res) => {
     const animalId = req.params.animalId;
     try {
-        const Animal = await AnimalDB.ux(animalId);
-        res.status(200).json({animal:result[0]});
+        const animal = await AnimalDB.readOneAnimal(animalId);
+        res.status(200).json({animal:animal.result[0]});
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

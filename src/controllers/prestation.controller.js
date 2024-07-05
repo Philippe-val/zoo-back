@@ -3,15 +3,15 @@ import { PrestationDB } from '../databases/prestation.database.js';
 const readPrestation = async (req, res) => {
     try {
         const prestation = await PrestationDB.readPrestation();
-        res.status(200).json({Prestation:prestation.result});
+        res.status(200).json({prestation:prestation.result});
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 };
 const readOnePrestation = async (req, res) => {
-    const PrestationId = req.params.prestationlId;
+    const prestationId = req.params.prestationId;
     try {
-        const Prestation = await PrestationDB.readOnePrestation(prestationId);
+        const prestation = await PrestationDB.readOnePrestation(prestationId);
         res.status(200).json({prestation:result[0]});
     } catch (error) {
         res.status(500).json({ message: error.message });
