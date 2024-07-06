@@ -1,11 +1,11 @@
 import query from "./init.database.js";
 
-const readMission = async () => {
-    const sql = "SELECT * FROM mission";
+const readMission = async (missionId) => {
+    const sql = "SELECT * FROM mission WHERE id_mission = ?";
     let error = null
     let result = null
     try {
-        result = await query(sql);
+        result = await query(sql,[missionId]);
     } catch (e) {
         error = e
     } finally {
@@ -15,7 +15,7 @@ const readMission = async () => {
 };
 
 const readOneMission = async (missionId) => {
-    const sql = "SELECT * FROM mission WHERE id = ?";
+    const sql = "SELECT * FROM mission WHERE id_mission = ?";
     let error = null
     let result = null
     try {

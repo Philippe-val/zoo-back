@@ -1,7 +1,7 @@
 import { AnimalDB } from '../databases/animal.database.js';
 
 const readAnimal = async (req, res) => {
-    const habitatId = req.query.habitatId;
+    const habitatId = req.params.habitatId;
     try {
         const animaux = await AnimalDB.readAnimalByHabitat(habitatId);
         res.status(200).json({animaux:animaux});

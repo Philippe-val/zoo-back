@@ -12,7 +12,7 @@ const readOnePrestation = async (req, res) => {
     const prestationId = req.params.prestationId;
     try {
         const prestation = await PrestationDB.readOnePrestation(prestationId);
-        res.status(200).json({prestation:result[0]});
+        res.status(200).json({prestation:prestation.result[0]});
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

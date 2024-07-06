@@ -19,7 +19,7 @@ const readOnePrestation = async (prestationId) => {
     let error = null
     let result = null
     try {
-        result = await query(sql, [readPrestationId]);
+        result = await query(sql, [prestationId]);
     } catch (e) {
         error = e
     } finally {
