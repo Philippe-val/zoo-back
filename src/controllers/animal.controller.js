@@ -4,7 +4,7 @@ const readAnimal = async (req, res) => {
     const habitatId = req.params.habitatId;
     try {
         const animaux = await AnimalDB.readAnimalByHabitat(habitatId);
-        res.status(200).json({animaux:animaux});
+        res.status(200).json({animaux:animaux.result});
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

@@ -1,10 +1,10 @@
 import { MissionDB } from '../databases/mission.database.js';
 
 const readMission = async (req, res) => {
-    const missionId = req.params.missionId;
+    
     try {
         const mission = await MissionDB.readMission();
-        res.status(200).json({mission:result});
+        res.status(200).json({mission:mission.result});
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
