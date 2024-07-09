@@ -15,7 +15,7 @@ const readPrestation = async () => {
 };
 
 const readOnePrestation = async (prestationId) => {
-    const sql = "SELECT * FROM prestation WHERE id = ?";
+    const sql = "SELECT * FROM prestation WHERE id_prestation = ?";
     let error = null
     let result = null
     try {
