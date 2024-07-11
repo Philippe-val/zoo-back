@@ -37,9 +37,9 @@ const signUp = async (name, email, hashedPassword, role) => {
 const read = async () => {
     // Requête SQL pour sélectionner les champs spécifiés de la table "users"
     const sql = `
-        SELECT user_id, name, email
+        SELECT user_id, name, email, role
         FROM users
-        ORDER BY last_name DESC
+        ORDER BY user_id DESC
     `;
 
     // Initialisation des variables d'erreur et de résultat

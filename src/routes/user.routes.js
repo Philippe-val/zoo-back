@@ -10,7 +10,7 @@ const initUserRoutes = (app) => {
     // Définition des routes avec les méthodes associées du contrôleur
     router.post("/signUp", UserController.signUp);
     router.post("/signIn", UserController.signIn);
-    router.get("/read", UserController.read);
+    router.get("/readUsers", UserController.read);
     router.get("/readOneUser", UserController.readOneUser);
     router.put("/updateUser", jwt, UserController.updateUser);
 

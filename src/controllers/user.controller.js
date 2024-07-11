@@ -82,12 +82,12 @@ const signIn = async (req, res) => {
     if (!email || !isEmail(email)) {
         return res.status(403).json({ message: `Email invalide` });
     }
-
     // Validation du mot de passe
-    if (!stringIsFilled(password)) {
-        return res.status(403).json({ message: `Mot de passe invalide` });
-    }
-
+     if (!password || password.length <= 4) {
+        return res
+        .status(403)
+        .json({ message: `Le mot de passe doit contenir au moins 5 caractères` });
+}
     // Récupération des informations de l'utilisateur depuis la base de données
     const response = await UserDB.signIn(email);
     const responseErr = response.error;

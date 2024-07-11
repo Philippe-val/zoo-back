@@ -26,8 +26,44 @@ const readOneAnimal = async (animalId) => {
         return { error, result }
     }
 };
+const createAnimal = async (
+    IMG,
+    IMG2,
+    TITLE,
+    DESCRIPTION,
+    SANTE,
+    SOIN,
+    ID_alimentation,
+    id_habitat,
+) => {
+    const sql = `
+        INSERT INTO animaux (IMG, IMG2, TITLE, DESCRIPTION, SANTE, SOIN, ID_alimentation, id_habitat)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    `;
+
+    let error = null;
+    let result = null;
+
+    try {
+        result = await query(sql, [
+            IMG,
+            IMG2,
+            TITLE,
+            DESCRIPTION,
+            SANTE,
+            SOIN,
+            ID_alimentation,
+            id_habitat,
+        ]);
+    } catch (e) {
+        error = e.message;
+    } finally {
+        return { error, result };
+    }
+}
 
 export const AnimalDB = {
     readAnimalByHabitat,
+    createAnimal,
     readOneAnimal
 };

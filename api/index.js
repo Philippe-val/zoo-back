@@ -19,7 +19,7 @@ app.use(
     credentials: true,
   })
 );
-
+app.use(express.json());
 // Initialize routes after CORS middleware
 initRoutes(app);
 
